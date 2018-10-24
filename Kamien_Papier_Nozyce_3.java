@@ -25,31 +25,16 @@ public class Kamien_Papier_Nozyce {
 			scanner.nextLine();
 			switch (choice) {
 				case 0:
-					printInstructions();
+					gameVsComputer();
 					break;
 				case 1:
-					groceryList.printGroceryList();
-					System.out.print("Press enter to continue");
-					scanner.nextLine();
+					gameForTwoPlayers()
 					break;
 				case 2:
-					addItem();
+					options();
 					break;
 				case 3:
-					modifyItem();
-					System.out.print("Press enter to continue");
-					scanner.nextLine();
-					break;
-				case 4:
-					removeItem();
-					System.out.print("Press enter to continue");
-					scanner.nextLine();
-					break;
-				case 5:
-					searchForItem();
-					break;
-				case 6:
-					quit = true;
+					boolean quit = true;
 					break;
 			}
 		}
@@ -62,7 +47,11 @@ public class Kamien_Papier_Nozyce {
 			System.out.println("\t3 - Wyjście");
 		}
 
-		public static void game () {
+		public static void options(){
+			System.out.println("Opjce");
+		}
+
+		public static void gameVsComputer () {
 			int resultDraw = 0;
 			int resultUser = 0;
 			int resultComputer = 0;
@@ -71,7 +60,6 @@ public class Kamien_Papier_Nozyce {
 				System.out.println("Wybierz: kamien (wybierz 1), papier (wybierz 2) lub nozyce (wybierz 3).");
 				Scanner input = new Scanner(System.in);
 				int choiseUser = input.nextInt();
-
 				if (choiseUser == 1) {
 					System.out.println("Kamien");
 				} else if (choiseUser == 2) {
@@ -79,11 +67,10 @@ public class Kamien_Papier_Nozyce {
 				} else if (choiseUser == 3) {
 					System.out.println("Nozyce");
 				}
+
 				Random random = new Random();
 				int choiseComputer = random.nextInt(3) + 1;
-
 				System.out.println("Komputer wybiera: ");
-
 				if (choiseComputer == 1) {
 					System.out.println("Kamien");
 				} else if (choiseComputer == 2) {
@@ -109,10 +96,16 @@ public class Kamien_Papier_Nozyce {
 					System.out.println("Niestety, przegrales! Moze nastepnym razem sie uda!");
 					System.out.println("Stan gry: " + "Remisy = " + resultDraw + " Wygrane Gracza = " + resultUser + " Wygrane Komputera = " + resultComputer);
 				}
-				System.out.println("                                      ");
-				System.out.println("                                      ");
+				System.out.println("\n");
+				System.out.println("\n");
 			}
 			System.out.println("Koniec gry");
+			System.out.print("Wciśnij enter by przejść do menu");
+			scanner.nextLine();
+			menu();
+		}
+		public static void gameForTwoPlayers(){
+			System.out.println("Gra dla dwóch graczy");
 		}
 	}
 }
