@@ -18,11 +18,9 @@ public class Kamien_Papier_Nozyce_3 {
             System.out.println("=========================================");
             System.out.println("Witaj w grze \"Kamien, papier, nozyce\".");
             System.out.println("=========================================");
-            System.out.println("                                          ");
-            System.out.println("Gra trwa do trzech zwyciestw.");
 
             printInstructions();
-            System.out.println("Menu: ");
+            System.out.println("Wybierz: ");
             choice = scanner.nextInt();
             scanner.nextLine();
             switch (choice) {
@@ -43,7 +41,7 @@ public class Kamien_Papier_Nozyce_3 {
     }
 
     public static void printInstructions(){
-        System.out.println("\nWybierz: ");
+        System.out.println("\nMenu: ");
         System.out.println("\t0 - Nowa gra przeciw komputerowi");
         System.out.println("\t1 - Nowa gra dla dwóch graczy");
         System.out.println("\t2 - Opcje");
@@ -51,17 +49,23 @@ public class Kamien_Papier_Nozyce_3 {
     }
 
     public static void options(){
-        System.out.println("Opjce");
-    }
+        System.out.println("Opcje: ");
+        }
 
     public static void gameVsComputer () {
         int resultDraw = 0;
         int resultUser = 0;
         int resultComputer = 0;
+        System.out.println("\n");
+        System.out.println("Nowa gra przeciw komputerowi");
 
-        while ((resultUser < 3) && (resultComputer < 3)) {
-            System.out.println("Wybierz: kamien (wybierz 1), papier (wybierz 2) lub nozyce (wybierz 3).");
-            Scanner input = new Scanner(System.in);
+        System.out.println("\n");
+        System.out.println("Do ilu zwycięstw będzie trwała gra? ");
+        Scanner input = new Scanner(System.in);
+        int finalResult = input.nextInt();
+
+        while ((resultUser < finalResult) && (resultComputer < finalResult)) {
+            System.out.println("Wybierz: kamien (wybierz 1), papier (wybierz 2), nozyce (wybierz 3) lub powrót do głownego menu (wybierz 4).");
             int choiseUser = input.nextInt();
             if (choiseUser == 1) {
                 System.out.println("Kamien");
@@ -69,6 +73,8 @@ public class Kamien_Papier_Nozyce_3 {
                 System.out.println("Papier");
             } else if (choiseUser == 3) {
                 System.out.println("Nozyce");
+            } else if (choiseUser == 4){
+                menu();
             }
 
             Random random = new Random();
@@ -108,6 +114,24 @@ public class Kamien_Papier_Nozyce_3 {
         menu();
     }
     public static void gameForTwoPlayers(){
+        System.out.println("\n");
         System.out.println("Gra dla dwóch graczy");
+        int resultDraw = 0;
+        int resultFirstPlayer = 0;
+        int resultSecondPlayer = 0;
+
+        System.out.println("\n");
+        System.out.println("Podaj imię pierwszego gracza: ");
+        Scanner input = new Scanner(System.in);
+        String nameFirstPlayer = input.next();
+
+        System.out.println("\n");
+        System.out.println("Podaj imię drugiego gracza: ");
+        String nameSecondPlayer = input.next();
+
+        System.out.println("\n");
+        System.out.println("Do ilu zwycięstw będzie trwała gra? ");
+        int finalResult = input.nextInt();
+
     }
 }
