@@ -70,7 +70,7 @@ public class Kamien_Papier_Nozyce_3_eng {
 
         while ((resultUser < finalResult) && (resultComputer < finalResult)) {
             System.out.println("\n");
-            System.out.println("Choose: stone (choose 1), paper (choose 2), scissors (choose 3) or return to the main menu (choose 4).");
+            System.out.println("Choose: Rock (choose 1), Paper (choose 2), Scissors (choose 3) or return to the main menu (choose 4).");
             int choiseUser = input.nextInt();
             if (choiseUser == 1) {
                 System.out.println("Rock");
@@ -117,7 +117,6 @@ public class Kamien_Papier_Nozyce_3_eng {
                 System.out.println("Result: " + "Draw = " + resultDraw + " Player score = " + resultUser + " Computer score = " + resultComputer);
             }
             System.out.println("\n");
-
         }
         dontMove();
         System.out.println("Game over");
@@ -149,7 +148,7 @@ public class Kamien_Papier_Nozyce_3_eng {
 
         while ((resultFirstPlayer < finalResult) && (resultSecondPlayer < finalResult)) {
             System.out.println("\n");
-            System.out.println(nameFirstPlayer +" Choose: stone (choose 1), paper (choose 2), scissors (choose 3) or return to the main menu (choose 4).");
+            System.out.println(nameFirstPlayer +" Choose: Rock (choose 1), Paper (choose 2), Scissors (choose 3) or return to the main menu (choose 4).");
             int choiseFirstPlayer = input.nextInt();
             if (choiseFirstPlayer == 1) {
                 System.out.println("Rock");
@@ -161,7 +160,7 @@ public class Kamien_Papier_Nozyce_3_eng {
                 menu();
             }
             System.out.println("\n");
-            System.out.println(nameSecondPlayer +" Choose: stone (choose 1), paper (choose 2), scissors (choose 3) or return to the main menu (choose 4).");
+            System.out.println(nameSecondPlayer +" Choose: Rock (choose 1), Paper (choose 2), Scissors (choose 3) or return to the main menu (choose 4).");
             int choiseSecondPlayer = input.nextInt();
             if (choiseSecondPlayer == 1) {
                 System.out.println("Rock");
@@ -180,17 +179,17 @@ public class Kamien_Papier_Nozyce_3_eng {
             if (choiseFirstPlayer - choiseSecondPlayer == 0) {
                 resultDraw += 1;
                 System.out.println("Draw. Try again");
-                System.out.println("Result: " + " Draw = " + resultDraw + "  " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
+                System.out.println("Result: " + " Draw = " + resultDraw + " " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
             } else if (choiseFirstPlayer - choiseSecondPlayer == -2) {
                 resultFirstPlayer += 1;
                 System.out.println(nameFirstPlayer + " You win! Congratulations!");
                 System.out.println(nameSecondPlayer +" Unfortunately you lost! Maybe next time will be better!");
-                System.out.println("Result: " + " Draw = " + resultDraw + "" + nameFirstPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer + "" + nameSecondPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer);
+                System.out.println("Result: " + " Draw = " + resultDraw + " " + nameFirstPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer + "" + nameSecondPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer);
             } else if (choiseFirstPlayer - choiseSecondPlayer == 1) {
                 resultFirstPlayer += 1;
                 System.out.println(nameFirstPlayer + " You win! Congratulations!");
                 System.out.println(nameSecondPlayer +" Unfortunately you lost! Maybe next time will be better!");
-                System.out.println("Result: " + " Draw = " + resultDraw + "" + nameFirstPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer + "" + nameSecondPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer);
+                System.out.println("Result: " + " Draw = " + resultDraw + " " + nameFirstPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer + "" + nameSecondPlayer + "'s" + " winnigs " + "= " + resultSecondPlayer);
             } else {
                 resultSecondPlayer += 1;
                 System.out.println(nameSecondPlayer + " You win! Congratulations!");
