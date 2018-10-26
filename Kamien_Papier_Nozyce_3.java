@@ -34,9 +34,6 @@ public class Kamien_Papier_Nozyce_3 {
                     gameForTwoPlayers();
                     break;
                 case 2:
-                    options();
-                    break;
-                case 3:
                     quit = true;
                     break;
             }
@@ -47,13 +44,8 @@ public class Kamien_Papier_Nozyce_3 {
         System.out.println("\nMenu: ");
         System.out.println("\t0 - Nowa gra przeciw komputerowi");
         System.out.println("\t1 - Nowa gra dla dwóch graczy");
-        System.out.println("\t2 - Opcje");
-        System.out.println("\t3 - Wyjście");
+        System.out.println("\t2 - Wyjście");
     }
-
-    public static void options(){
-        System.out.println("Opcje: ");
-        }
 
     public static void dontMove() {
         try {
@@ -77,6 +69,7 @@ public class Kamien_Papier_Nozyce_3 {
         int finalResult = input.nextInt();
 
         while ((resultUser < finalResult) && (resultComputer < finalResult)) {
+            System.out.println("\n");
             System.out.println("Wybierz: kamien (wybierz 1), papier (wybierz 2), nozyce (wybierz 3) lub powrót do głownego menu (wybierz 4).");
             int choiseUser = input.nextInt();
             if (choiseUser == 1) {
@@ -93,6 +86,7 @@ public class Kamien_Papier_Nozyce_3 {
             Random random = new Random();
             int choiseComputer = random.nextInt(3) + 1;
             System.out.println("Komputer wybiera: ");
+            dontMove();
             if (choiseComputer == 1) {
                 System.out.println("Kamien");
             } else if (choiseComputer == 2) {
@@ -100,8 +94,10 @@ public class Kamien_Papier_Nozyce_3 {
             } else if (choiseComputer == 3) {
                 System.out.println("Nozyce");
             }
+            System.out.println("\n");
             System.out.println("=========================================");
             dontMove();
+            System.out.println("\n");
 
             if (choiseUser - choiseComputer == 0) {
                 resultDraw += 1;
@@ -121,13 +117,14 @@ public class Kamien_Papier_Nozyce_3 {
                 System.out.println("Stan gry: " + "Remisy = " + resultDraw + " Wygrane Gracza = " + resultUser + " Wygrane Komputera = " + resultComputer);
             }
             System.out.println("\n");
-            System.out.println("\n");
+
         }
         dontMove();
         System.out.println("Koniec gry");
         dontMove();
         System.out.print("Wciśnij enter by przejść do menu");
         scanner.nextLine();
+        System.out.println("\n");
         menu();
     }
     public static void gameForTwoPlayers(){
@@ -151,7 +148,8 @@ public class Kamien_Papier_Nozyce_3 {
         int finalResult = input.nextInt();
 
         while ((resultFirstPlayer < finalResult) && (resultSecondPlayer < finalResult)) {
-            System.out.println(nameFirstPlayer +"Wybierz: kamien (wybierz 1), papier (wybierz 2), nozyce (wybierz 3) lub powrót do głownego menu (wybierz 4).");
+            System.out.println("\n");
+            System.out.println(nameFirstPlayer +" Wybierz: kamien (wybierz 1), papier (wybierz 2), nozyce (wybierz 3) lub powrót do głownego menu (wybierz 4).");
             int choiseFirstPlayer = input.nextInt();
             if (choiseFirstPlayer == 1) {
                 System.out.println("Kamien");
@@ -162,8 +160,8 @@ public class Kamien_Papier_Nozyce_3 {
             } else if (choiseFirstPlayer == 4){
                 menu();
             }
-
-            System.out.println(nameSecondPlayer +"Wybierz: kamien (wybierz 1), papier (wybierz 2), nozyce (wybierz 3) lub powrót do głownego menu (wybierz 4).");
+            System.out.println("\n");
+            System.out.println(nameSecondPlayer +" Wybierz: kamien (wybierz 1), papier (wybierz 2), nozyce (wybierz 3) lub powrót do głownego menu (wybierz 4).");
             int choiseSecondPlayer = input.nextInt();
             if (choiseSecondPlayer == 1) {
                 System.out.println("Kamien");
@@ -174,33 +172,38 @@ public class Kamien_Papier_Nozyce_3 {
             } else if (choiseSecondPlayer == 4){
                 menu();
             }
-
+            dontMove();
+            System.out.println("\n");
             System.out.println("=========================================");
+            System.out.println("\n");
+            dontMove();
             if (choiseFirstPlayer - choiseSecondPlayer == 0) {
                 resultDraw += 1;
                 System.out.println("Remis. Sprobuj ponownie");
                 System.out.println("Stan gry: " + " Remisy = " + resultDraw + " Wygrane " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
             } else if (choiseFirstPlayer - choiseSecondPlayer == -2) {
                 resultFirstPlayer += 1;
-                System.out.println(nameFirstPlayer + "Wygrales! Gratulacje!");
-                System.out.println(nameSecondPlayer +"Stan gry: " + " Remisy = " + resultDraw + " Wygrane " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
+                System.out.println(nameFirstPlayer + " Wygrales! Gratulacje!");
+                System.out.println(nameSecondPlayer +" Niestety, przegrales! Moze nastepnym razem sie uda!");
+                System.out.println("Stan gry: " + " Remisy = " + resultDraw + " Wygrane " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
             } else if (choiseFirstPlayer - choiseSecondPlayer == 1) {
                 resultFirstPlayer += 1;
-                System.out.println(nameFirstPlayer + "Wygrales! Gratulacje!");
-                System.out.println(nameSecondPlayer +"Niestety, przegrales! Moze nastepnym razem sie uda!");
+                System.out.println(nameFirstPlayer + " Wygrales! Gratulacje!");
+                System.out.println(nameSecondPlayer +" Niestety, przegrales! Moze nastepnym razem sie uda!");
                 System.out.println("Stan gry: " + " Remisy = " + resultDraw + " Wygrane " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
             } else {
                 resultSecondPlayer += 1;
-                System.out.println(nameSecondPlayer + "Wygrales! Gratulacje!");
-                System.out.println(nameFirstPlayer + "Niestety, przegrales! Moze nastepnym razem sie uda!");
+                System.out.println(nameSecondPlayer + " Wygrales! Gratulacje!");
+                System.out.println(nameFirstPlayer + " Niestety, przegrales! Moze nastepnym razem sie uda!");
                 System.out.println("Stan gry: " + " Remisy = " + resultDraw + " Wygrane " + nameFirstPlayer + "= " + resultFirstPlayer + " Wygrane " + nameSecondPlayer + " = " + resultSecondPlayer);
             }
             System.out.println("\n");
-            System.out.println("\n");
+
         }
         System.out.println("Koniec gry");
         System.out.print("Wciśnij enter by przejść do menu");
         scanner.nextLine();
+        System.out.println("\n");
         menu();
     }
 }
